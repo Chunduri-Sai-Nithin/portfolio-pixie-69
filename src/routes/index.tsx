@@ -3,11 +3,11 @@ import {
   Laptop,
   Github,
   Linkedin,
-  Twitter,
   Mail,
   Phone,
   MapPin,
   ArrowUpRight,
+  GraduationCap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profileAsset from "@/assets/profile.png.asset.json";
@@ -15,17 +15,17 @@ import profileAsset from "@/assets/profile.png.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Baizid MD Ashadzzaman — Developer & Engineer Portfolio" },
+      { title: "Sai Nithin Chunduri — Python Developer Portfolio" },
       {
         name: "description",
         content:
-          "Portfolio of Baizid MD Ashadzzaman, a developer, programmer and engineer building fast, modern web experiences.",
+          "Portfolio of Sai Nithin Chunduri, a Computer Science student from Guntur, India with skills in Python programming and database management.",
       },
-      { property: "og:title", content: "Baizid MD Ashadzzaman — Developer Portfolio" },
+      { property: "og:title", content: "Sai Nithin Chunduri — Python Developer Portfolio" },
       {
         property: "og:description",
         content:
-          "Developer, programmer and engineer crafting fast, modern and accessible web products.",
+          "Computer Science student skilled in Python, databases, problem solving and team collaboration.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -34,38 +34,44 @@ export const Route = createFileRoute("/")({
   component: Portfolio,
 });
 
+const LINKEDIN_URL = "https://www.linkedin.com/in/sai-nithin-45b794284";
+
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Project", href: "#project" },
+  { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ];
 
 const skills = [
-  { name: "React & TypeScript", level: "Advanced" },
-  { name: "Node.js & APIs", level: "Advanced" },
-  { name: "UI / UX Design", level: "Intermediate" },
-  { name: "Python & Automation", level: "Intermediate" },
+  { name: "Python Programming", level: "Core" },
+  { name: "Database Management", level: "Core" },
+  { name: "Problem Solving", level: "Strong" },
+  { name: "Team Collaboration", level: "Strong" },
+  { name: "Effective Communication", level: "Strong" },
+  { name: "Project Management", level: "Growing" },
+  { name: "Critical Thinking", level: "Strong" },
+  { name: "Decision Making", level: "Strong" },
 ];
 
-const projects = [
+const education = [
   {
-    title: "Nova Dashboard",
-    tag: "Web App",
-    description:
-      "Realtime analytics dashboard with role-based access, charts and a lightning-fast data layer.",
+    title: "Bachelor of Science, Computer Science & Engineering",
+    place: "Kits Akshar Institute of Technology, Yanamadala, Guntur",
+    year: "2028",
+    note: "Currently pursuing",
   },
   {
-    title: "Kettle Commerce",
-    tag: "E-commerce",
-    description:
-      "Headless storefront with instant search, one-tap checkout and a custom CMS for the team.",
+    title: "High School Diploma",
+    place: "NRI Junior College, Chandramouli Nagar, Guntur",
+    year: "March 2024",
+    note: "Ranked in Top 10% of class",
   },
   {
-    title: "Orbit Scheduler",
-    tag: "Product",
-    description:
-      "Calendar-first scheduling tool with timezone-aware booking links and email automation.",
+    title: "10th Grade",
+    place: "Kendriya Vidyalaya, Nallapadu, Guntur",
+    year: "March 2022",
+    note: "Secondary schooling",
   },
 ];
 
@@ -76,7 +82,7 @@ function Portfolio() {
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
           <a href="#home" className="flex items-center gap-2 text-2xl font-semibold text-primary">
             <Laptop className="size-6" />
-            Zaman
+            Nithin
           </a>
           <ul className="hidden items-center gap-8 text-sm font-medium text-muted-foreground md:flex">
             {navLinks.map((link, i) => (
@@ -109,10 +115,13 @@ function Portfolio() {
                 Hello
               </p>
               <h1 className="mt-4 text-5xl font-bold leading-[1.08] tracking-tight md:text-6xl">
-                I&rsquo;m <span className="text-gradient">Baizid MD Ashadzzaman</span>
+                I&rsquo;m <span className="text-gradient">Sai Nithin Chunduri</span>
               </h1>
               <p className="mt-5 text-lg text-muted-foreground">
-                Developer / Programmer / Engineer
+                Python Developer / CSE Student / Database Enthusiast
+              </p>
+              <p className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
+                <MapPin className="size-4 text-primary" /> Guntur, India 522004
               </p>
               <div className="mt-9 flex flex-wrap gap-4">
                 <Button
@@ -128,18 +137,32 @@ function Portfolio() {
                   variant="outline"
                   className="rounded-lg border-primary px-8 text-primary hover:bg-accent"
                 >
-                  <a href="#project">Portfolio</a>
+                  <a href="#education">Education</a>
                 </Button>
               </div>
               <div className="mt-10 flex items-center gap-5 text-muted-foreground">
-                <a href="#contact" aria-label="GitHub" className="transition-colors hover:text-primary">
-                  <Github className="size-5" />
-                </a>
-                <a href="#contact" aria-label="LinkedIn" className="transition-colors hover:text-primary">
+                <a
+                  href={LINKEDIN_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn"
+                  className="transition-colors hover:text-primary"
+                >
                   <Linkedin className="size-5" />
                 </a>
-                <a href="#contact" aria-label="Twitter" className="transition-colors hover:text-primary">
-                  <Twitter className="size-5" />
+                <a
+                  href="mailto:sainithin961@gmail.com"
+                  aria-label="Email"
+                  className="transition-colors hover:text-primary"
+                >
+                  <Mail className="size-5" />
+                </a>
+                <a
+                  href="tel:+918179760216"
+                  aria-label="Phone"
+                  className="transition-colors hover:text-primary"
+                >
+                  <Phone className="size-5" />
                 </a>
               </div>
             </div>
@@ -156,7 +179,7 @@ function Portfolio() {
               />
               <img
                 src={profileAsset.url}
-                alt="Baizid MD Ashadzzaman, developer and engineer"
+                alt="Sai Nithin Chunduri, Python developer and computer science student"
                 className="relative z-10 max-h-[30rem] w-auto object-contain drop-shadow-2xl"
               />
             </div>
@@ -170,22 +193,22 @@ function Portfolio() {
                 About
               </p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
-                Building products that feel effortless
+                Driven by curiosity, built on fundamentals
               </h2>
               <p className="mt-5 text-muted-foreground">
-                I&rsquo;m a full-stack developer with a designer&rsquo;s eye. I turn rough ideas into
-                polished, production-ready web apps — clean architecture on the inside, calm and
-                confident interfaces on the outside.
+                I&rsquo;m a driven professional with strong skills in Python programming and database
+                management. I&rsquo;m recognized for effective problem-solving and time management
+                abilities.
               </p>
               <p className="mt-4 text-muted-foreground">
-                Over the past few years I&rsquo;ve shipped dashboards, storefronts and internal tools
-                for startups, focusing on performance, accessibility and details that last.
+                Prepared to leverage my expertise in a collaborative setting to drive project success
+                and improve outcomes. Currently a fresher, actively learning and building.
               </p>
               <div className="mt-8 grid grid-cols-3 gap-4">
                 {[
-                  { k: "4+", v: "Years" },
-                  { k: "30+", v: "Projects" },
-                  { k: "18", v: "Clients" },
+                  { k: "B.Sc", v: "CSE 2028" },
+                  { k: "Top 10%", v: "Class rank" },
+                  { k: "Open", v: "To work" },
                 ].map((s) => (
                   <div
                     key={s.v}
@@ -197,13 +220,13 @@ function Portfolio() {
                 ))}
               </div>
             </div>
-            <div className="space-y-4">
+            <div className="grid gap-4 sm:grid-cols-2">
               {skills.map((skill) => (
                 <div
                   key={skill.name}
-                  className="flex items-center justify-between rounded-xl border border-border bg-surface px-5 py-4 shadow-[var(--shadow-card)]"
+                  className="flex items-center justify-between gap-3 rounded-xl border border-border bg-surface px-5 py-4 shadow-[var(--shadow-card)]"
                 >
-                  <span className="font-medium">{skill.name}</span>
+                  <span className="text-sm font-medium">{skill.name}</span>
                   <span className="rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground">
                     {skill.level}
                   </span>
@@ -213,29 +236,35 @@ function Portfolio() {
           </div>
         </section>
 
-        <section id="project" style={{ background: "var(--gradient-soft)" }}>
+        <section id="education" style={{ background: "var(--gradient-soft)" }}>
           <div className="mx-auto max-w-6xl px-6 py-20">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Project</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Selected work</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+              Education &amp; Training
+            </p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">My journey so far</h2>
             <div className="mt-10 grid gap-6 md:grid-cols-3">
-              {projects.map((project) => (
+              {education.map((item) => (
                 <article
-                  key={project.title}
+                  key={item.title}
                   className="group rounded-2xl border border-border bg-surface p-6 shadow-[var(--shadow-card)] transition-transform hover:-translate-y-1"
                 >
                   <div
-                    className="blob-shape mb-6 h-32 w-full opacity-80"
+                    className="blob-shape mb-6 flex h-24 w-24 items-center justify-center opacity-90"
                     style={{ background: "var(--gradient-primary)" }}
-                    aria-hidden="true"
-                  />
+                  >
+                    <GraduationCap className="size-9 text-primary-foreground" />
+                  </div>
                   <span className="text-xs font-semibold uppercase tracking-widest text-primary">
-                    {project.tag}
+                    {item.year}
                   </span>
-                  <h3 className="mt-2 flex items-center gap-1 text-xl font-semibold">
-                    {project.title}
-                    <ArrowUpRight className="size-4 text-primary opacity-0 transition-opacity group-hover:opacity-100" />
+                  <h3 className="mt-2 flex items-start gap-1 text-lg font-semibold">
+                    {item.title}
+                    <ArrowUpRight className="mt-1 size-4 shrink-0 text-primary opacity-0 transition-opacity group-hover:opacity-100" />
                   </h3>
-                  <p className="mt-3 text-sm text-muted-foreground">{project.description}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{item.place}</p>
+                  <p className="mt-3 text-xs font-medium uppercase tracking-widest text-primary">
+                    {item.note}
+                  </p>
                 </article>
               ))}
             </div>
@@ -252,18 +281,35 @@ function Portfolio() {
                 Let&rsquo;s build something together
               </h2>
               <p className="mt-4 text-muted-foreground">
-                Available for freelance work and full-time roles. Tell me about your project and
-                I&rsquo;ll reply within a day.
+                Open to internships, entry-level roles and collaborative projects. Send a message and
+                I&rsquo;ll get back to you soon.
               </p>
               <ul className="mt-8 space-y-4 text-sm">
                 <li className="flex items-center gap-3">
-                  <Mail className="size-4 text-primary" /> hello@zaman.dev
+                  <Mail className="size-4 text-primary" />
+                  <a href="mailto:sainithin961@gmail.com" className="hover:text-primary">
+                    sainithin961@gmail.com
+                  </a>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Phone className="size-4 text-primary" /> +91 98765 43210
+                  <Phone className="size-4 text-primary" />
+                  <a href="tel:+918179760216" className="hover:text-primary">
+                    +91 81797 60216
+                  </a>
                 </li>
                 <li className="flex items-center gap-3">
-                  <MapPin className="size-4 text-primary" /> Remote / Worldwide
+                  <MapPin className="size-4 text-primary" /> Guntur, India 522004
+                </li>
+                <li className="flex items-center gap-3">
+                  <Linkedin className="size-4 text-primary" />
+                  <a
+                    href={LINKEDIN_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-primary"
+                  >
+                    linkedin.com/in/sai-nithin-45b794284
+                  </a>
                 </li>
               </ul>
             </div>
@@ -301,9 +347,9 @@ function Portfolio() {
       <footer className="border-t border-border py-8">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 text-sm text-muted-foreground sm:flex-row">
           <p className="flex items-center gap-2 font-semibold text-primary">
-            <Laptop className="size-4" /> Zaman
+            <Laptop className="size-4" /> Nithin
           </p>
-          <p>&copy; {new Date().getFullYear()} Baizid MD Ashadzzaman. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Sai Nithin Chunduri. All rights reserved.</p>
         </div>
       </footer>
     </div>
