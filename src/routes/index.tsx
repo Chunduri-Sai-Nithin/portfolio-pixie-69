@@ -118,7 +118,7 @@ function Portfolio() {
                 I&rsquo;m <span className="text-gradient">Sai Nithin Chunduri</span>
               </h1>
               <p className="mt-5 text-lg text-muted-foreground">
-                Python Developer / CSE Student / Database Enthusiast
+                Full Stack Engineer / Web Developer
               </p>
               <p className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
                 <MapPin className="size-4 text-primary" /> Guntur, India 522004
@@ -206,7 +206,7 @@ function Portfolio() {
               </p>
               <div className="mt-8 grid grid-cols-3 gap-4">
                 {[
-                  { k: "B.Sc", v: "CSE 2028" },
+                  { k: "B.Tech", v: "CSE 2028" },
                   { k: "Top 10%", v: "Class rank" },
                   { k: "Open", v: "To work" },
                 ].map((s) => (
