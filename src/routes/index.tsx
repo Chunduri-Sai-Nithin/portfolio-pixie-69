@@ -56,7 +56,7 @@ const skills = [
 
 const education = [
   {
-    title: "Bachelor of Science, Computer Science & Engineering",
+    title: "Bachelor of Technology, Computer Science & Engineering",
     place: "Kits Akshar Institute of Technology, Yanamadala, Guntur",
     year: "2028",
     note: "Currently pursuing",
