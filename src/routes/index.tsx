@@ -79,6 +79,21 @@ const education = [
 ];
 
 function Portfolio() {
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
+    if (typeof window === "undefined") return "light";
+    const stored = window.localStorage.getItem("theme");
+    if (stored === "light" || stored === "dark") return stored;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.toggle("dark", theme === "dark");
+    window.localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => setTheme((t) => (t === "dark" ? "light" : "dark"));
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-border/60 bg-surface/85 backdrop-blur">
@@ -87,22 +102,32 @@ function Portfolio() {
             <Laptop className="size-6" />
             Nithin
           </a>
-          <ul className="hidden items-center gap-8 text-sm font-medium text-muted-foreground md:flex">
-            {navLinks.map((link, i) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className={
-                    i === 0
-                      ? "text-primary transition-colors"
-                      : "transition-colors hover:text-primary"
-                  }
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div className="flex items-center gap-3">
+            <ul className="hidden items-center gap-8 text-sm font-medium text-muted-foreground md:flex">
+              {navLinks.map((link, i) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className={
+                      i === 0
+                        ? "text-primary transition-colors"
+                        : "transition-colors hover:text-primary"
+                    }
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              className="flex size-9 items-center justify-center rounded-full border border-input bg-background text-muted-foreground transition-colors hover:text-primary"
+            >
+              {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
+            </button>
+          </div>
         </nav>
       </header>
 
