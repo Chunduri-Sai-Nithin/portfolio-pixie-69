@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import {
   Laptop,
   Github,
@@ -8,6 +9,8 @@ import {
   MapPin,
   ArrowUpRight,
   GraduationCap,
+  Sun,
+  Moon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profileAsset from "@/assets/profile.png.asset.json";
