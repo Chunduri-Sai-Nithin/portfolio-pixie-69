@@ -62,7 +62,7 @@ const education = [
     note: "Currently pursuing",
   },
   {
-    title: "High School Diploma",
+    title: "Intermediate",
     place: "NRI Junior College, Chandramouli Nagar, Guntur",
     year: "March 2024",
     note: "Ranked in Top 10% of class",
