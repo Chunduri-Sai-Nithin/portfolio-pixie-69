@@ -9,6 +9,7 @@ import {
   MapPin,
   ArrowUpRight,
   GraduationCap,
+  FolderGit2,
   Sun,
   Moon,
 } from "lucide-react";
