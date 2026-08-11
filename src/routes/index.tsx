@@ -302,23 +302,13 @@ function Portfolio() {
         </section>
 
         <section id="projects" className="mx-auto max-w-6xl px-6 py-20">
-          <div className="flex items-end justify-between gap-6">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
-                Projects
-              </p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
-                Things I&rsquo;ve built
-              </h2>
-            </div>
-            <a
-              href={LINKEDIN_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="hidden items-center gap-1 text-sm font-semibold text-primary transition-colors hover:underline sm:flex"
-            >
-              View all <ArrowUpRight className="size-4" />
-            </a>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+              Projects
+            </p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
+              What&rsquo;s coming
+            </h2>
           </div>
           <div className="mt-10 flex flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-surface px-6 py-20 text-center shadow-[var(--shadow-card)]">
             <div
