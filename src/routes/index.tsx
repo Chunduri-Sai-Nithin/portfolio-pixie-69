@@ -80,13 +80,6 @@ const education = [
   },
 ];
 
-const projects: Array<{
-  title: string;
-  description: string;
-  tech: string[];
-  tag: string;
-}> = [];
-
 function Portfolio() {
   const [theme, setTheme] = useState<"light" | "dark">(() => {
     if (typeof window === "undefined") return "light";
