@@ -80,36 +80,12 @@ const education = [
   },
 ];
 
-const projects = [
-  {
-    title: "Nova Dashboard",
-    description:
-      "An analytics dashboard with real-time charts, dark mode and responsive layouts built for teams to monitor performance at a glance.",
-    tech: ["React", "TypeScript", "Tailwind"],
-    tag: "Featured",
-  },
-  {
-    title: "Kettle Commerce",
-    description:
-      "A full-stack e-commerce storefront with cart, checkout flow and product management backed by a PostgreSQL database.",
-    tech: ["Node.js", "PostgreSQL", "Stripe"],
-    tag: "Full Stack",
-  },
-  {
-    title: "Orbit Scheduler",
-    description:
-      "A task scheduling tool with drag-and-drop calendars, reminders and role-based access for collaborative planning.",
-    tech: ["Python", "Flask", "SQLite"],
-    tag: "Python",
-  },
-  {
-    title: "Insight Hub",
-    description:
-      "A data-driven content platform that aggregates sources, tags articles and surfaces insights through clean, readable feeds.",
-    tech: ["Python", "Pandas", "API"],
-    tag: "Data",
-  },
-];
+const projects: Array<{
+  title: string;
+  description: string;
+  tech: string[];
+  tag: string;
+}> = [];
 
 function Portfolio() {
   const [theme, setTheme] = useState<"light" | "dark">(() => {
