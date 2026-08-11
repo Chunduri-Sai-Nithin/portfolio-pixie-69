@@ -80,37 +80,6 @@ const education = [
   },
 ];
 
-const projects = [
-  {
-    title: "Nova Dashboard",
-    description:
-      "An analytics dashboard with real-time charts, dark mode and responsive layouts built for teams to monitor performance at a glance.",
-    tech: ["React", "TypeScript", "Tailwind"],
-    tag: "Featured",
-  },
-  {
-    title: "Kettle Commerce",
-    description:
-      "A full-stack e-commerce storefront with cart, checkout flow and product management backed by a PostgreSQL database.",
-    tech: ["Node.js", "PostgreSQL", "Stripe"],
-    tag: "Full Stack",
-  },
-  {
-    title: "Orbit Scheduler",
-    description:
-      "A task scheduling tool with drag-and-drop calendars, reminders and role-based access for collaborative planning.",
-    tech: ["Python", "Flask", "SQLite"],
-    tag: "Python",
-  },
-  {
-    title: "Insight Hub",
-    description:
-      "A data-driven content platform that aggregates sources, tags articles and surfaces insights through clean, readable feeds.",
-    tech: ["Python", "Pandas", "API"],
-    tag: "Data",
-  },
-];
-
 function Portfolio() {
   const [theme, setTheme] = useState<"light" | "dark">(() => {
     if (typeof window === "undefined") return "light";
@@ -333,60 +302,26 @@ function Portfolio() {
         </section>
 
         <section id="projects" className="mx-auto max-w-6xl px-6 py-20">
-          <div className="flex items-end justify-between gap-6">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
-                Projects
-              </p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
-                Things I&rsquo;ve built
-              </h2>
-            </div>
-            <a
-              href={LINKEDIN_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="hidden items-center gap-1 text-sm font-semibold text-primary transition-colors hover:underline sm:flex"
-            >
-              View all <ArrowUpRight className="size-4" />
-            </a>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+              Projects
+            </p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
+              What&rsquo;s coming
+            </h2>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {projects.map((project) => (
-              <article
-                key={project.title}
-                className="group flex flex-col rounded-2xl border border-border bg-surface p-6 shadow-[var(--shadow-card)] transition-transform hover:-translate-y-1"
-              >
-                <div className="flex items-center justify-between">
-                  <div
-                    className="blob-shape flex size-14 items-center justify-center opacity-90"
-                    style={{ background: "var(--gradient-primary)" }}
-                  >
-                    <FolderGit2 className="size-6 text-primary-foreground" />
-                  </div>
-                  <span className="rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground">
-                    {project.tag}
-                  </span>
-                </div>
-                <h3 className="mt-5 flex items-center gap-2 text-xl font-semibold">
-                  {project.title}
-                  <ArrowUpRight className="size-4 text-primary opacity-0 transition-opacity group-hover:opacity-100" />
-                </h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {project.description}
-                </p>
-                <ul className="mt-5 flex flex-wrap gap-2">
-                  {project.tech.map((t) => (
-                    <li
-                      key={t}
-                      className="rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-muted-foreground"
-                    >
-                      {t}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
+          <div className="mt-10 flex flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-surface px-6 py-20 text-center shadow-[var(--shadow-card)]">
+            <div
+              className="blob-shape flex size-16 items-center justify-center opacity-90"
+              style={{ background: "var(--gradient-primary)" }}
+            >
+              <FolderGit2 className="size-7 text-primary-foreground" />
+            </div>
+            <h3 className="mt-5 text-xl font-semibold">Coming soon</h3>
+            <p className="mt-2 max-w-md text-sm text-muted-foreground">
+              My projects are currently in the works. Check back soon to see what I&rsquo;ve been
+              building.
+            </p>
           </div>
         </section>
 
